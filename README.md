@@ -13,3 +13,9 @@
 
 ## Create app.py file ## 
  touch app.py
+
+ ## Create Models ##
+
+ ## Create relationships ##
+
+ ## Create a Database ##
