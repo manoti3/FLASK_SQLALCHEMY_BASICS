@@ -19,3 +19,14 @@
  ## Create relationships ##
 
  ## Create a Database ##
+  flask shell
+  from app import db
+  db.create_all()
+
+  exit()
+
+  ## Opening The Database ##
+  sqlite3 db.sqlite3
+  cd instance
+  .tables
+  .schema

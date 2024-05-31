@@ -1,12 +1,13 @@
-from flask import Flask;
-from flask_sqlalchemy import SQLALchemy;
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
 
 from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLALchemy(app)
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
+db = SQLAlchemy(app)
 #db.init_app(app)
 
 class Customer(db.Model):
@@ -21,8 +22,8 @@ class Customer(db.Model):
     orders = db.relationship('Order', backref='customer')
 
 order_product = db.Table('order_product',
-     db.Column('order_id', db.Integer, db.ForeignKey('order.id'), primary_key=True)
-     db.Column('product_id', db.Integer, db.ForeignKey('product.id'), primary_key=True)
+    db.Column('order_id', db.Integer, db.ForeignKey('order.id'), primary_key=True),
+    db.Column('product_id', db.Integer, db.ForeignKey('product.id'), primary_key=True)
 )
 
 class Order(db.Model):
