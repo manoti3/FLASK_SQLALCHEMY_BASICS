@@ -88,3 +88,9 @@ ashley = Customer(first_name='Ashley', last_name='smith', address='123 Fake Stre
 
 db.session.add(ashley)
 db.session.commit()
+
+flask shell
+ashley = Customer.query.filter_by(first_name='Ashley').first()
+ashley.first_name
+db.session.delete(ashley)
+db.session.commit()
