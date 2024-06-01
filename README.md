@@ -94,3 +94,5 @@ ashley = Customer.query.filter_by(first_name='Ashley').first()
 ashley.first_name
 db.session.delete(ashley)
 db.session.commit()
+
+## pip install uuid ##
